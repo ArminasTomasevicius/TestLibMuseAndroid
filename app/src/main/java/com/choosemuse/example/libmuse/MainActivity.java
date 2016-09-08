@@ -134,6 +134,8 @@ public class MainActivity extends Activity implements OnClickListener {
     private final double[] eegBuffer = new double[6];
     private boolean eegStale;
     private final double[] alphaBuffer = new double[6];
+    private final double[] betaBuffer = new double[6];
+    private boolean betaStale;
     private boolean alphaStale;
     private final double[] accelBuffer = new double[3];
     private boolean accelStale;
@@ -239,14 +241,14 @@ i++;
 
             // The user has pressed the "Connect" button to connect to
             // the headband in the spinner.
-
+            List<Muse> availableMuses = manager.getMuses();
+            Spinner musesSpinner = (Spinner) findViewById(R.id.muses_spinner);
             // Listening is an expensive operation, so now that we know
             // which headband the user wants to connect to we can stop
             // listening for other headbands.
             manager.stopListening();
 
-            List<Muse> availableMuses = manager.getMuses();
-            Spinner musesSpinner = (Spinner) findViewById(R.id.muses_spinner);
+
 
             // Check that we actually have something to connect to.
             if (availableMuses.size() < 1 || musesSpinner.getAdapter().getCount() < 1) {
@@ -428,6 +430,11 @@ i++;
                 getEegChannelValues(alphaBuffer,p);
                 alphaStale = true;
                 break;
+            case BETA_RELATIVE:
+                assert(betaBuffer.length >= n);
+                getEegChannelValues(betaBuffer,p);
+                betaStale = true;
+                break;
             case BATTERY:
             case DRL_REF:
             case QUANTIZATION:
@@ -515,6 +522,9 @@ i++;
             if (alphaStale) {
                 updateAlpha();
             }
+            if (betaStale) {
+                updateBeta();
+            }
             handler.postDelayed(tickUi, 1000 / 60);
         }
     };
@@ -555,8 +565,22 @@ i++;
         TextView elem4 = (TextView)findViewById(R.id.elem4);
         elem4.setText(String.format("%6.2f", alphaBuffer[3]));
         */
+        TextView elem = (TextView)findViewById(R.id.alfaview);
+        elem.setText(String.format("%6.2f", alphaBuffer[0]));
     }
-
+    private void updateBeta() {
+       /* TextView elem1 = (TextView)findViewById(R.id.elem1);
+        elem1.setText(String.format("%6.2taf", alphaBuffer[0]));
+        TextView elem2 = (TextView)findViewById(R.id.elem2);
+        elem2.setText(String.format("%6.2f", alphaBuffer[1]));
+        TextView elem3 = (TextView)findViewById(R.id.elem3);
+        elem3.setText(String.format("%6.2f", alphaBuffer[2]));
+        TextView elem4 = (TextView)findViewById(R.id.elem4);
+        elem4.setText(String.format("%6.2f", alphaBuffer[3]));
+        */
+        TextView elem = (TextView)findViewById(R.id.betaview);
+        elem.setText(String.format("%6.2f", betaBuffer[0]));
+    }
 
     //--------------------------------------
     // File I/O

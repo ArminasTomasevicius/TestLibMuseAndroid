@@ -4,11 +4,23 @@
         "source": "C:\\Users\\armin\\libmuse_5.13.0\\android\\examples\\TestLibMuseAndroid\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\User\\libmuse_5.13.0\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\green.jpg",
+        "source": "C:\\Users\\User\\libmuse_5.13.0\\android\\examples\\TestLibMuseAndroid\\app\\src\\main\\res\\drawable-mdpi\\green.jpg"
+    },
+    {
         "merged": "C:\\Users\\armin\\libmuse_5.13.0\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\green.jpg",
         "source": "C:\\Users\\armin\\libmuse_5.13.0\\android\\examples\\TestLibMuseAndroid\\app\\src\\main\\res\\drawable-mdpi\\green.jpg"
     },
     {
         "merged": "C:\\Users\\armin\\libmuse_5.13.0\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\wn53h.png",
         "source": "C:\\Users\\armin\\libmuse_5.13.0\\android\\examples\\TestLibMuseAndroid\\app\\src\\main\\res\\drawable-mdpi\\wn53h.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\libmuse_5.13.0\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\wn53h.png",
+        "source": "C:\\Users\\User\\libmuse_5.13.0\\android\\examples\\TestLibMuseAndroid\\app\\src\\main\\res\\drawable-mdpi\\wn53h.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\libmuse_5.13.0\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\User\\libmuse_5.13.0\\android\\examples\\TestLibMuseAndroid\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
     }
 ]
