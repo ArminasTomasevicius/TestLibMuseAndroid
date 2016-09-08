@@ -171,6 +171,8 @@ public class MainActivity extends Activity implements OnClickListener {
      */
     private final AtomicReference<Handler> fileHandler = new AtomicReference<>();
 
+   public int i = 0;
+
 
     //--------------------------------------
     // Lifecycle / Connection code
@@ -223,15 +225,17 @@ public class MainActivity extends Activity implements OnClickListener {
 
     @Override
     public void onClick(View v) {
-
-        if (v.getId() == R.id.refresh) {
+i++;
+       /* if (v.getId() == R.id.refresh) {
             // The user has pressed the "Refresh" button.
             // Start listening for nearby or paired Muse headbands. We call stopListening
             // first to make sure startListening will clear the list of headbands and start fresh.
             manager.stopListening();
             manager.startListening();
 
-        }  if (v.getId() == R.id.connect) {
+        }
+          */
+        if (v.getId() == R.id.connect && i == 1) {
 
             // The user has pressed the "Connect" button to connect to
             // the headband in the spinner.
@@ -268,13 +272,14 @@ public class MainActivity extends Activity implements OnClickListener {
                 muse.runAsynchronously();
             }
 
-        } else if (v.getId() == R.id.disconnect) {
+        } else if (v.getId() == R.id.connect && i == 2) {
 
             // The user has pressed the "Disconnect" button.
             // Disconnect from the selected Muse.
             if (muse != null) {
                 muse.disconnect(false);
             }
+            i = 0;
 
         } //else if (v.getId() == R.id.pause) {
 
@@ -475,12 +480,12 @@ public class MainActivity extends Activity implements OnClickListener {
      */
     private void initUI() {
         setContentView(R.layout.activity_main);
-        Button refreshButton = (Button) findViewById(R.id.refresh);
-        refreshButton.setOnClickListener(this);
+       // Button refreshButton = (Button) findViewById(R.id.refresh);
+      //  refreshButton.setOnClickListener(this);
         Button connectButton = (Button) findViewById(R.id.connect);
         connectButton.setOnClickListener(this);
-        Button disconnectButton = (Button) findViewById(R.id.disconnect);
-        disconnectButton.setOnClickListener(this);
+       // Button disconnectButton = (Button) findViewById(R.id.disconnect);
+      //  disconnectButton.setOnClickListener(this);
        // Button pauseButton = (Button) findViewById(R.id.pause);
         //pauseButton.setOnClickListener(this);
 
