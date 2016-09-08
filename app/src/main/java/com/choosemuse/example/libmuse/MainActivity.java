@@ -231,7 +231,7 @@ public class MainActivity extends Activity implements OnClickListener {
             manager.stopListening();
             manager.startListening();
 
-        } else if (v.getId() == R.id.connect) {
+        }  if (v.getId() == R.id.connect) {
 
             // The user has pressed the "Connect" button to connect to
             // the headband in the spinner.
